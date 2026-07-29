@@ -2,69 +2,249 @@
 
 ## Project Overview
 
-This project analyzes retail sales performance using DuckDB, SQL, and Python. The goal is to identify key drivers of revenue and profitability across product categories, customer segments, and geographic regions.
+This project demonstrates an end-to-end business analytics workflow using **Python**, **DuckDB**, **SQL**, and **multiple linear regression** to analyze retail sales performance. It showcases practical data analytics skills through data preprocessing, SQL-based feature engineering, business analysis, statistical modeling, and data storytelling.
 
-Using transactional sales data from a retail superstore, this analysis explores business questions such as:
+The project follows a structured analytics pipeline that mirrors a real-world data analytics workflow:
 
-* Which product categories generate the most revenue?
-* Which product categories generate the most profit?
-* Which customer segments are most valuable?
+1. Data preprocessing and validation
+2. Feature engineering with DuckDB
+3. Business-focused SQL analysis
+4. Predictive modeling with multiple linear regression
+
+Each stage builds upon the previous one, demonstrating how raw business data can be transformed into actionable insights that support data-driven decision-making.
+
+---
+
+## Business Questions
+
+This project explores questions such as:
+
+* Which product categories generate the highest revenue?
+* Which categories generate the greatest profit?
+* Which customer segments are the most valuable?
 * Which regions and states perform best?
-* How do discounts impact profitability?
+* How do discounts affect profitability?
+* Which customers contribute the most lifetime revenue?
+* Which business factors influence sales performance?
 
-The project demonstrates the use of SQL-based analytics with DuckDB, data manipulation with Pandas, and business-focused data storytelling.
+---
 
 ## Technologies Used
 
 * Python 3.12
 * DuckDB
+* SQL
 * Pandas
-* Jupyter Notebook
+* NumPy
+* Scikit-learn
 * Matplotlib
+* Jupyter Notebook
 * VS Code
+* Git & GitHub
+
+
+## Requirements
+
+- Python 3.12+
+- pip
+
+## Installation
+
+```bash
+git clone https://github.com/danigeiger/e_commerce_duckdb_project.git
+cd e_commerce_duckdb_project
+
+python -m venv .venv
+
+# macOS/Linux
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+
+pip install -r requirements.txt
+
+jupyter notebook
+```
+
 
 ## Project Structure
 
 ```text
 e_commerce_duckdb_project/
+│
 ├── data/
 │   ├── superstore.csv
 │   └── superstore_utf8.csv
+│
 ├── notebooks/
-│   └── 01_superstore_analysis.ipynb
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_duckdb_feature_engineering.ipynb
+│   ├── 03_business_sql_analysis.ipynb
+│   └── 04_multiple_linear_regression.ipynb
+│
 ├── outputs/
-└── README.md
+│
+├── README.md
+└── requirements.txt
 ```
 
-## Data Source
 
-This project uses the Superstore Dataset published on Kaggle by Vivek Chowdhury.
+## Project Workflow
 
-Dataset:
-https://www.kaggle.com/datasets/vivek468/superstore-dataset-final
+### Notebook 01 — Data Preprocessing
 
-The dataset contains retail sales transactions including customer information, product categories, sales, discounts, and profit metrics.
+The first notebook prepares the raw retail dataset for analysis using Pandas.
 
-## Data Preparation
+Tasks include:
 
-The original CSV file was not UTF-8 encoded and produced Unicode decoding errors when imported into Pandas and DuckDB.
+* Importing and inspecting the dataset
+* Resolving character encoding issues
+* Standardizing column names
+* Converting data types
+* Detecting missing values and duplicates
+* Performing business logic validation
+* Preparing clean data for SQL analysis
 
-The file was successfully loaded using CP1252 encoding and converted to UTF-8 to create a standardized dataset for analysis.
+This stage establishes a reliable foundation before any analytical work begins.
 
-## Planned Analysis
+---
 
-* Revenue by category
+### Notebook 02 — DuckDB Feature Engineering
+
+The second notebook demonstrates SQL-based feature engineering by creating reusable analytical features with DuckDB views.
+
+Features created include:
+
+* Fulfillment days
+* Profit margin
+* Order year
+* Order month
+* Customer lifetime sales
+
+Rather than modifying the original dataset, engineered features are stored in DuckDB views, preserving the raw data while creating reusable features for downstream analysis.
+
+---
+
+### Notebook 03 — Business SQL Analysis
+
+The third notebook answers practical business questions using SQL.
+
+Analyses include:
+
+* Sales by category
 * Profit by category
 * Regional performance
 * Customer segment analysis
-* Discount versus profit analysis
-* Top-performing products
-* Bottom-performing products
+* Customer lifetime value
+* Discount analysis
+* Profitability analysis
+* Shipping performance
+* Product-level insights
+
+Each query includes an explanation of the business question, SQL solution, interpretation of results, and key business takeaway.
+
+---
+
+### Notebook 04 — Multiple Linear Regression
+
+The final notebook develops an interpretable predictive model to understand which business variables influence sales.
+
+The workflow includes:
+
+* Feature selection
+* Data preparation
+* Model fitting
+* Coefficient interpretation
+* Model evaluation
+* Business recommendations
+
+The emphasis is placed on explaining relationships between variables rather than maximizing prediction accuracy.
+
+---
+
+## Data Source
+
+The project uses the Sample Superstore dataset published on Kaggle.
+
+The dataset contains transactional retail sales data including customer information, product categories, orders, shipping details, discounts, sales, and profit across multiple U.S. regions.
+
+---
+
+## Skills Demonstrated
+
+### Python
+
+* Data cleaning
+* Data validation
+* Feature preparation
+* Exploratory analysis
+
+### SQL (DuckDB)
+
+* Complex SELECT statements
+* Aggregations
+* GROUP BY
+* CASE expressions
+* Window functions
+* Common Table Expressions (CTEs)
+* Analytical views
+* Feature engineering
+
+### Statistics
+
+* Multiple linear regression
+* Model interpretation
+* Predictor evaluation
+* Business inference
+
+### Data Analytics
+
+* Business KPI analysis
+* Customer segmentation
+* Profitability analysis
+* Revenue analysis
+* Geographic performance
+* Executive-level business storytelling
+
+---
+
+## Key Learning Objectives
+
+This project demonstrates the ability to:
+
+* Build a reproducible analytics workflow
+* Transform raw business data into analytical features
+* Write production-style SQL queries
+* Translate business questions into data-driven insights
+* Communicate analytical findings clearly
+* Develop and interpret regression models for business decision-making
+
+---
+
+## Future Improvements
+
+Potential enhancements include:
+
+* Interactive Power BI or Tableau dashboard
+* Time-series sales forecasting
+* Customer segmentation using clustering
+* Classification models for profitability prediction
+* Additional feature engineering using DuckDB
+* Automated reporting pipeline
+
+---
 
 ## Author
 
-Jessica Danielle Geiger
+**Jessica Danielle Geiger**
 
-M.S. Data Science | University of Eastern University
+M.S. Data Science  
+B.S. Human Physiology (Minor in Biochemistry)  
+AWS Certified Cloud Practitioner
 
 GitHub: https://github.com/danigeiger
+
+LinkedIn: https://www.linkedin.com/in/jessica-d-geiger/
+
+```
