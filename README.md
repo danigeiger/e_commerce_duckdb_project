@@ -70,6 +70,7 @@ jupyter notebook
 
 ## Project Structure
 
+
 ```text
 e_commerce_duckdb_project/
 │
@@ -83,8 +84,15 @@ e_commerce_duckdb_project/
 │   ├── 03_business_sql_analysis.ipynb
 │   └── 04_multiple_linear_regression.ipynb
 │
-├── outputs/
+├── dashboard/
+│   ├── retail_sales_dashboard.pbix
+│   └── screenshots/
+│       ├── executive_dashboard.png
+│       ├── sales_analysis.png
+│       ├── customer_analysis.png
+│       └── regional_analysis.png
 │
+├── outputs/
 ├── README.md
 └── requirements.txt
 ```
@@ -162,6 +170,13 @@ The workflow includes:
 The emphasis is placed on explaining relationships between variables rather than maximizing prediction accuracy.
 
 ---
+
+## Interactive Power BI Dashboard
+
+The final stage of this project is an interactive Power BI dashboard that transforms the analysis into an executive-level business intelligence report. The dashboard includes KPI summaries, sales and profitability trends, customer and regional insights, and interactive filters, demonstrating data visualization, DAX, Power Query, and business storytelling.
+
+---
+
 
 ## Data Source
 
